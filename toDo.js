@@ -1,3 +1,10 @@
+document.getElementById('addButton').addEventListener('click', addToList);
+document.getElementById('todoInput').addEventListener('keydown', function(event) {
+    if (event.keyCode === 13) { // Check if Enter key is pressed
+        addToList();
+    }
+});
+
 function addToList () {
     console.log ('button clicked');
     let todoInput = document.getElementById('todoInput');
@@ -10,6 +17,7 @@ function addToList () {
     todoList.appendChild(newtoDo);
     todoInput.value = ' ';
 }
+
 function removetoDo () {
     let listItem = this;
     listItem.classList.add ('crossed');
